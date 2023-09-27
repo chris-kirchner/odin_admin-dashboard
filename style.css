@@ -11,33 +11,56 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  /* border: 1px solid rgb(255, 172, 133); */
   display: grid;
   grid-template-rows: 200px auto;
-  grid-template-columns: 320px auto;
+  grid-template-columns: 340px auto;
 }
 
 .sidebar-container {
   background-color: rgb(25, 146, 212);
   grid-area: 1 / 1 / -1 / 1;
-  display: grid;
-  justify-content: center;
+  padding: 28px;
 }
 
-.sidebar-element1 {
+.sidebar-section {
+  margin-bottom: 70px;
+}
+
+.sidebar-element {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto 1fr;
   align-items: center;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.sidebar-element > a {
+  text-decoration: none;
 }
 
 .sidebar-icon {
   fill: white;
-  height: 40px;
-  margin-right: 20px;
+  height: 18px;
+  width: 38px;
 }
 
-.sidebar-text-title {
+.sidebar-text {
   color: white;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 24px;
+}
+
+.sidebar-icon.title {
+  height: 38px;
+}
+
+.sidebar-text.title {
+  font-size: 32px;
+}
+
+.sidebar-icon.communities {
+  height: 14px;
 }
 
 .header-container {
