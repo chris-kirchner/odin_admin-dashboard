@@ -1,10 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+:root {
+  --sidebar-text-mouseover-color: rgb(240, 180, 41);
+  /* --sidebar-text-color: rgb(215, 242, 255); */
+  --sidebar-text-color: rgb(240, 250, 255);
+}
+
 
 html {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+svg {
+  vertical-align: bottom;
 }
 
 body {
@@ -26,6 +40,10 @@ body {
   margin-bottom: 70px;
 }
 
+.sidebar-section:nth-last-child(1) {
+  margin-bottom: 0px;
+}
+
 .sidebar-element {
   display: grid;
   grid-template-rows: auto;
@@ -35,20 +53,18 @@ body {
   margin-bottom: 22px;
 }
 
-.sidebar-element > a {
-  text-decoration: none;
-}
-
 .sidebar-icon {
-  fill: white;
+  fill: var(--sidebar-text-color);
   height: 18px;
   width: 38px;
+  transition: fill 0.5s;
 }
 
 .sidebar-text {
-  color: white;
+  color: var(--sidebar-text-color);
   font-weight: 600;
   font-size: 24px;
+  transition: color 0.5s;
 }
 
 .sidebar-icon.title {
@@ -64,9 +80,49 @@ body {
 }
 
 .header-container {
-  background-color: rgb(255, 92, 92);
+  background-color: rgb(255, 255, 255);
   grid-column: 2 / -1;
+  display: grid;
+  grid-template-rows: auto 2fr;
+  grid-template-columns: minmax(200px, 2fr) 1fr;
+  padding: 28px 60px;
 }
+
+.searchbar {
+  position: relative;
+  width: 100%;
+  align-items: center;
+  gap: 20px;
+}
+
+.searchbar-icon {
+  position: absolute;
+  fill: rgb(48, 48, 48);
+  height: 16px;
+  left: 12px;
+  top: 8px;
+}
+
+.searchbar-input {
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20em;
+  padding: 10px;
+  padding-left: 38px;
+  background-color: rgb(226, 232, 240);
+  height: 34px;
+  width: 100%;
+  font-size: 1em;
+  outline-color: transparent;
+  transition: outline-color 0.5s;
+  
+}
+
+.searchbar-input:focus {
+  outline: 1px solid rgb(157, 163, 172);
+  /* transition: outline-color 0.5s; */
+}
+
 
 .main-container {
   background-color: rgb(226, 232, 240);
