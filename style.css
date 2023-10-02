@@ -17,6 +17,11 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 svg {
   /* vertical-align: center; */
   display: block;
@@ -36,6 +41,7 @@ body {
   grid-area: 1 / 1 / -1 / 1;
   /* padding-top: 28px; */
   width: 100%;
+  z-index: 2;
 }
 
 .sidebar-section:nth-child(1) {
@@ -108,6 +114,8 @@ body {
   grid-template-columns: auto;
   padding: 28px 60px;
   row-gap: 24px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
+  z-index: 1;
 }
 
 .header-section1 {
@@ -137,7 +145,7 @@ body {
   border: 0;
   border-radius: 20em;
   padding: 10px;
-  padding-left: 38px;
+  padding-left: 45px;
   background-color: rgb(226, 232, 240);
   height: 100%;
   width: 100%;
@@ -259,11 +267,11 @@ body {
 }
 
 .projects-container {
-  background-color: rgb(245, 174, 186);
+  /* background-color: rgb(245, 174, 186); */
   grid-area: 1 / 1 / -1 / 2;
   display: grid;
   grid-template-rows: auto 1fr;
-  row-gap: 10px;
+  row-gap: 14px;
 }
 
 .project-card-container {
@@ -272,15 +280,60 @@ body {
   /* overflow: hidden; */
   display: grid;
   grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 36px 30px;
   grid-auto-rows: 1fr;
 }
 
 .project-card {
-  background-color: rgb(255, 239, 239);
-  border: 1px solid black;
+  background-color: rgb(255, 255, 255);
   border-radius: 0.6em;
+  border-left: 10px solid rgb(240, 180, 41);
+  box-shadow: 0px 8px 3px rgba(0, 0, 0, 0.05);
+  padding: 36px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 6px;
+}
+
+.card-title {
+  font-size: 1.37rem;
+  font-weight: 600;
+}
+
+.card-body {
+  color: rgb(99, 99, 99);
+  font-size: 1.2rem;
+}
+
+.card-icon-container {
+  align-self: center;
+  justify-self: end;
+}
+
+.card-icon-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
+.card-icon-container > a {
+  fill: black;
+  transition: fill 1s;
+}
+.card-icon-container > a:hover {
+  fill: rgb(25, 146, 212);
+  transition: fill 0.3s;
+}
+
+.card-icon-container > a:active {
+  fill: rgb(118, 207, 255);
+  transition: fill 0.2s;
+}
+
+.card-icon {
+  width: 30px;
+  height: 30px;
 }
 
 .announcements-container {
@@ -294,7 +347,7 @@ body {
 .main-title {
   margin: 0;
   padding: 0;
-  font-size: 1.3rem;
-  font-weight: 500;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
