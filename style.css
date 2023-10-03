@@ -242,6 +242,7 @@ body {
   font-size: 1rem;
   font-weight: 700;
   width: 100px;
+  cursor: pointer;
   transition: background-color 1.5s;
 }
 
@@ -262,7 +263,7 @@ body {
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 3fr 1fr;
-  padding: 40px 20px;
+  padding: 40px 30px;
   gap: 20px;
 }
 
@@ -276,34 +277,60 @@ body {
 
 .project-card-container {
   grid-area: 2 / 1 / -1 / -1;
-  /* resize: both; */
-  /* overflow: hidden; */
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(auto-fit, 1fr);
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 36px 30px;
   grid-auto-rows: 1fr;
 }
 
 .project-card {
+  position: relative;
+  top: 0;
   background-color: rgb(255, 255, 255);
   border-radius: 0.6em;
-  border-left: 10px solid rgb(240, 180, 41);
+  border-left: 11px solid rgb(240, 180, 41);
   box-shadow: 0px 8px 3px rgba(0, 0, 0, 0.05);
   padding: 36px;
   display: grid;
   grid-template-rows: auto 1fr auto;
   row-gap: 6px;
+  transition: top 0.3s ease-in-out, box-shadow 0.4s;
+}
+
+.project-card:hover {
+  top: -4px;
+  box-shadow: 0px 12px 10px rgba(0, 0, 0, 0.08);
+  color: rgb(25, 146, 212);
 }
 
 .card-title {
   font-size: 1.37rem;
   font-weight: 600;
+  transition: color 1s;
 }
+
+.card-title > a {
+  color: black;
+}
+
+/* .card-title:hover {
+  color: rgb(25, 146, 212);
+  transition: color 0.3s;
+}
+
+.card-title:active {
+  color: rgb(118, 207, 255);
+  transition: color 0.2s;
+} */
 
 .card-body {
   color: rgb(99, 99, 99);
   font-size: 1.2rem;
+}
+
+.card-body > a {
+  color: rgb(99, 99, 99);
 }
 
 .card-icon-container {
@@ -321,6 +348,7 @@ body {
   fill: black;
   transition: fill 1s;
 }
+
 .card-icon-container > a:hover {
   fill: rgb(25, 146, 212);
   transition: fill 0.3s;
