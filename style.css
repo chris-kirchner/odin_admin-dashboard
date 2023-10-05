@@ -464,8 +464,71 @@ hr {
 }
 
 .trending-container {
-  background-color: rgb(245, 228, 174);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  row-gap: 14px;
 }
+
+.trending-card-container {
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.6em;
+  box-shadow: 0px 8px 3px rgba(0, 0, 0, 0.05);
+  padding: 36px;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  row-gap: 20px;
+}
+
+.trending-user {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 60px 1fr;
+  row-gap: 4px;
+  column-gap: 20px;
+}
+
+.trending-user-avatar {
+  width: 60px;
+  grid-area: 1 / 1 / -1 / 2;
+  align-self: center;
+}
+
+.trending-user-name {
+  align-self: end;
+}
+
+.trending-user-name > a {
+  color: black;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.trending-user-project {
+  align-self: top;
+  line-height: 1.6ch;
+}
+
+.trending-user-project > a {
+  color: rgb(99, 99, 99);
+  font-size: 1.05rem;
+}
+
+.trending-card-container > .trending-user:nth-of-type(1) > .trending-user-avatar {
+  fill: rgb(179, 221, 235);
+}
+
+.trending-card-container > .trending-user:nth-of-type(2) > .trending-user-avatar {
+  fill: rgb(255, 225, 154);
+}
+
+.trending-card-container > .trending-user:nth-of-type(3) > .trending-user-avatar {
+  fill: rgb(167, 167, 167);
+}
+
+.trending-card-container > .trending-user:nth-of-type(4) > .trending-user-avatar {
+  fill: rgb(255, 183, 183);
+}
+
 
 .main-title {
   margin: 0;
